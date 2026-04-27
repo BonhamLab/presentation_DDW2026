@@ -1,6 +1,6 @@
-# Typst Talk template
+# DDW 2026 - The Infant Microbiome
 
-[![Title Slide](https://github.com/BonhamLab/template_presentation/releases/latest/download/title-slide.png)](https://github.com/BonhamLab/template_presentation/releases/latest/download/presentation.pdf)
+[![Title Slide](https://github.com/BonhamLab/presentation_DDW2026/releases/latest/download/title-slide.png)](https://github.com/BonhamLab/presentation_DDW2026/releases/latest/download/presentation.pdf)
 
 Write, deploy, and publish a typst presentation
 

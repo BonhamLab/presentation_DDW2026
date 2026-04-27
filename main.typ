@@ -15,15 +15,15 @@
   footer: self => self.info.institution,
   config-info(
     title: [
-      TITLE #h(6em)
+      The Childhood Microbiome #h(5em)
       #box(baseline:1em, [
         #image("assets/general/lab-logo-banner.png", width: 8em)
       ])
     ],
-    subtitle: [SUBTITLE],
+    subtitle: [What it's doing and why you should care],
     author: [Kevin Bonham, PhD],
-    date: datetime(year: 2025, month: 1, day: 1),
-    institution: [SOME SEMINAR SERIES],
+    date: datetime(year: 2026, month: 5, day: 2),
+    institution: [DDW 2026],
   ),
   config-colors(
     primary: rgb("#3172AE"),
