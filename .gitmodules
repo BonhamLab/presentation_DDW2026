@@ -1,3 +1,9 @@
 [submodule "assets/general"]
 	path = assets/general
 	url = git@github.com:BonhamLab/assets_lab_general
+[submodule "assets/child_brain_microbiome"]
+	path = assets/child_brain_microbiome
+	url = git@github.com:BonhamLab/assets_child_brain_microbiome
+[submodule "assets/binfantis"]
+	path = assets/binfantis
+	url = git@github.com:BonhamLab/assets_binfantis.git
