@@ -1,4 +1,4 @@
-#import "@preview/touying:0.6.1": *
+#import "@preview/touying:0.7.3": *
 #import themes.metropolis: *
 #import "@preview/cetz:0.4.2"
 #import "assets/general/slides.typ": thank-you-slide, contact_info_slide
@@ -37,20 +37,52 @@
 
 #title-slide()
 
-== Outline
-
 #slide[
-  #set text(24pt)
-  - Thing 1
-  - Thing 2
+    #figure(
+    cetz-canvas({
+    import cetz.draw: *
+    content((0, 0), [#image("assets/binfantis/evo-breastmilk-1.png", width: 650pt)])
+    content((-9,-6), text(14pt)[@taoEvolutionaryGlycomicsCharacterization2011])
+    (pause,)
+    content((0, 0), [#image("assets/binfantis/evo-breastmilk-2.png", width: 650pt)])
+
+    content((0, 0), [#image("assets/binfantis/evo-breastmilk-3.png", width: 650pt)])
+    (pause,)
+    content((0, 0), [#image("assets/binfantis/evo-breastmilk-4.png", width: 650pt)])
+    (pause,)
+    content((7, -1), [#image("assets/binfantis/evo-breastmilk-5.2.png", width: 120pt)])
+    content((2, -1), [#image("assets/binfantis/evo-breastmilk-6.2.png", width: 180pt)])
+    (pause,)
+    content((0,0),
+      box(stroke:1pt, inset:17pt, fill:white,text(red, 36pt)[
+        Humans can't digest HMOs!
+      ]), angle:20deg)
+    }))
 ]
 
-= Section
+== The gut microbiome has widespread effects on human health
 
-== Slide title
+#slide[
+   #figure(
+    cetz-canvas({
+    import cetz.draw: *
+    content((0, 0), [#image("assets/child_brain_microbiome/microbiome-effects.jpg", width: 620pt)])
+    content((-9,-7), text(14pt)[@ronanChildhoodDevelopmentMicrobiome2021])
+    // (pause,)
+    // circle((-4.8,4), radius:(80pt,70pt), stroke:3pt + red)
+    }))
+]
 
-Some content
+== The infant microbiome changes rapidly over the first years of life
+
+
+
 
 #contact_info_slide
 
-#thank-you-slide(slidesurl: "https://github.com/BonhamLab/template_presentation")
+#thank-you-slide(slidesurl: "https://github.com/BonhamLab/presentation_DDW2026")
+
+== Bibliography
+
+#bibliography("refs.bib", title: none, style: "chicago-author-date")
+
