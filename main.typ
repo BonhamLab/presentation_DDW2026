@@ -42,7 +42,6 @@
     cetz-canvas({
     import cetz.draw: *
     content((0, 0), [#image("assets/binfantis/evo-breastmilk-1.png", width: 650pt)])
-    content((-9,-6), text(14pt)[@taoEvolutionaryGlycomicsCharacterization2011])
     (pause,)
     content((0, 0), [#image("assets/binfantis/evo-breastmilk-2.png", width: 650pt)])
 
@@ -52,6 +51,7 @@
     (pause,)
     content((7, -1), [#image("assets/binfantis/evo-breastmilk-5.2.png", width: 120pt)])
     content((2, -1), [#image("assets/binfantis/evo-breastmilk-6.2.png", width: 180pt)])
+    content((-9,-6), text(14pt)[@taoEvolutionaryGlycomicsCharacterization2011])
     (pause,)
     content((0,0),
       box(stroke:1pt, inset:17pt, fill:white,text(red, 36pt)[
@@ -75,7 +75,191 @@
 
 == The infant microbiome changes rapidly over the first years of life
 
+#slide(repeat: 2, self => [
+  #let (uncover, only, alternatives) = utils.methods(self)
+  #cetz.canvas({
+    import cetz.draw: *
+    let uncover = uncover.with(cover-fn: hide.with(bounds: true))
+    
+    content((0, 0), [#image("assets/child_brain_microbiome/yassour-timecourse.png", width: 750pt)])
+    only(1, rect((-0.3,-5.6), (14,5.4), fill:white, stroke: none))
+    content((-10,-6), text(14pt)[@yassourNaturalHistoryInfant2016])
+  })
+])
 
+== Infant microbiome succession follows similar patterns around the globe
+
+#slide[
+   #figure(
+    cetz-canvas({
+    import cetz.draw: *
+    content((0, 0), [#image("assets/child_brain_microbiome/fahur-fig1a.png", width: 450pt)])
+    content((-5,-6), text(14pt)[@fahurbottinoEarlyLifeMicrobial2025])
+    content((12,3), image("assets/general/guilherme_headshot.png", width: 80pt))
+    rect((-14,-5.6), (-11,2), fill:white, stroke: none)
+
+    }))
+]
+
+#slide(repeat: 2, self => [
+  #let (uncover, only, alternatives) = utils.methods(self)
+  #cetz.canvas({
+    import cetz.draw: *
+    let uncover = uncover.with(cover-fn: hide.with(bounds: true))
+    
+    content((0, 0), [#image("assets/child_brain_microbiome/fahur-fig1de.png", width: 700pt)])
+    only(1, rect((-0.8,-5.6), (14,5.4), fill:white, stroke:none))
+    content((-9,-6), text(14pt)[@fahurbottinoEarlyLifeMicrobial2025])
+    content((14,3), image("assets/general/guilherme_headshot.png", width: 80pt))
+  })
+])
+
+#slide(repeat: 3, self => [
+  #let (uncover, only, alternatives) = utils.methods(self)
+  #cetz.canvas({
+    import cetz.draw: *
+    let uncover = uncover.with(cover-fn: hide.with(bounds: true))
+    
+    content((0, 0), [#image("assets/child_brain_microbiome/fahur-fig3.png", width: 609pt)])
+    only(1, rect((-1.0,-6.6), (3,6.4), fill:white, stroke:none))
+    only("1-2", rect((3.3,-6.6), (7.3,6.4), fill:white, stroke:none))
+    content((-9,-6), text(14pt)[@fahurbottinoEarlyLifeMicrobial2025])
+    content((14,3), image("assets/general/guilherme_headshot.png", width: 80pt))
+  })
+])
+
+== Global succession patterns do not map neatly onto individuals
+
+#slide[
+   #figure(
+    cetz-canvas({
+    import cetz.draw: *
+    content((0, 0), [#image("assets/child_brain_microbiome/fahur-fig2a.png", width: 350pt)])
+    content((9,-6), text(14pt)[@fahurbottinoEarlyLifeMicrobial2025])
+    content((14,3), image("assets/general/guilherme_headshot.png", width: 80pt))
+    rect((-12,-5.6), (-11,2), fill:white, stroke: none)
+    }))
+]
+
+== Studying the gut microbiome is statistically challenging
+
+#slide(composer: (1fr,1fr))[
+   #figure(
+    cetz-canvas({
+    import cetz.draw: *
+    content((0, 0), [#image("assets/child_brain_microbiome/factors-affecting-microbiome.webp", width: 400pt)
+])
+    content((-5,-6), text(14pt)[@safarchiUnderstandingDysbiosisResilience2025])
+    }))][
+- Many inputs to microbial composition#pause
+- Sparsity ("zero-inflation")#pause
+- High-dimensionality (less bad in infants than in adults, but still hard)#pause
+- Compositionality
+]
+
+== Studying the gut microbiome is statistically challenging, _especially in infants_
+#slide(repeat: 2, self => [
+  #let (uncover, only, alternatives) = utils.methods(self)
+  #cetz.canvas({
+    import cetz.draw: *
+    let uncover = uncover.with(cover-fn: hide.with(bounds: true))
+    
+    content((0, 0), [#image("assets/child_brain_microbiome/yassour-timecourse.png", width: 750pt)])
+    only(2, rect((-11.3,-5.6), (-7,5.4), stroke: 3pt+red))
+    content((-10,-6), text(14pt)[@yassourNaturalHistoryInfant2016])
+  })
+])
+
+== Approach one - cross-sectional by age
+
+#slide[
+    #figure(
+        cetz-canvas({
+        import cetz.draw: *
+        content((0, 0), [#image("assets/child_brain_microbiome/khula_africa.png", width: 321pt)], name:"fig")
+        content((-3.5,-6), [  #text(10pt)[Bonham, _et. al._, _mBio_ (2025)]], name:"cite")
+        (pause,)
+        content((13, 0), [#image("assets/child_brain_microbiome/khula-cohort.png", width: 304pt)], name:"fig2")
+        (pause,)
+        rect("fig2.south-east", (5.8,5), fill:white, stroke: none)
+        content((13, 0), [#image("assets/child_brain_microbiome/khula-longitudinal.png", width: 284pt)], name:"fig")
+        })
+    )
+    #v(-1em)
+]
+
+== VEP is a measure of brain structure and function
+
+#slide[
+    #figure(
+        cetz-canvas({
+        import cetz.draw: *
+        content((0, 0), [#image("assets/child_brain_microbiome/michaleeg.png", width: 250pt)], name:"fig")
+        content((-1.5,-6), [  #text(14pt)[Bonham, _et. al._, _mBio_ (2025)]], name:"cite")
+        (pause,)
+        content((9, 0), [#image("assets/child_brain_microbiome/vep_peaks.png", width: 230pt)], name:"fig")
+        (pause,)
+        content((18, 0), [#image("assets/child_brain_microbiome/vep_peaks_icons.png", width: 230pt)], name:"fig")
+        })
+    )
+]
+
+== Approach one - cross-sectional by age
+
+
+#slide[
+    #figure(
+        cetz-canvas({
+        import cetz.draw: *
+        content((-9.5,-8), [  #text(14pt)[@bonhamCodevelopmentGutMicrobial2025]], name:"cite")
+
+        content((0, 0), [#image("assets/child_brain_microbiome/concurrent_volcano.png", width: 673pt)], name:"fig")
+        content((0, -6), [#image("assets/child_brain_microbiome/geneset-keys.png", width: 250pt)], name:"fig")
+            })
+    )
+
+]
+
+== Approach two - "pseudo-longiditinal"
+
+
+#slide(repeat: 2, self => [
+  #let (uncover, only, alternatives) = utils.methods(self)
+  #cetz.canvas({
+    import cetz.draw: *
+    let uncover = uncover.with(cover-fn: hide.with(bounds: true))
+    
+    content((0, 0), [#image("assets/child_brain_microbiome/fsea-futures.png", width: 673pt)], name:"fig")
+    content((-8.5,-7), [  #text(14pt)[@bonhamCodevelopmentGutMicrobial2025]], name:"cite")
+    only(1, rect((-4.0,-6.6), (12,6.4), fill:white, stroke:none))
+  })
+])
+
+
+#slide[
+    #v(1em)
+    #figure(
+        cetz-canvas({
+        import cetz.draw: *
+        content((0, 0), [#image("assets/child_brain_microbiome/future_volcano.png", width: 673pt)], name:"fig")
+        content((0, -4), [#image("assets/child_brain_microbiome/geneset-keys.png", width: 250pt)], name:"fig")
+        content((-8.5,-8), [  #text(14pt)[@bonhamCodevelopmentGutMicrobial2025]], name:"cite")
+
+            })
+    )
+
+]
+
+== Current directions
+
+#slide(composer: (1fr,1fr))[
+- Gaussian Process models for better fit to time-varying data
+   - "Microbiome age Z-score" analagous to growth curves
+- *Mostly unrelated*: stress responses in human milk metabolizing microbe
+  _Bifidobacterium infantis_
+ ][
+   #image("assets/child_brain_microbiome/who-length-age.png") 
+ ]
 
 
 #contact_info_slide
