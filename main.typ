@@ -20,7 +20,7 @@
         #image("assets/general/lab-logo-banner.png", width: 8em)
       ])
     ],
-    subtitle: [What it's doing and why you should care],
+    subtitle: [Brains, immunity, and evoltion],
     author: [Kevin Bonham, PhD],
     date: datetime(year: 2026, month: 5, day: 2),
     institution: [DDW 2026],
@@ -197,9 +197,7 @@
         content((0, 0), [#image("assets/child_brain_microbiome/michaleeg.png", width: 250pt)], name:"fig")
         content((-1.5,-6), [  #text(14pt)[Bonham, _et. al._, _mBio_ (2025)]], name:"cite")
         (pause,)
-        content((9, 0), [#image("assets/child_brain_microbiome/vep_peaks.png", width: 230pt)], name:"fig")
-        (pause,)
-        content((18, 0), [#image("assets/child_brain_microbiome/vep_peaks_icons.png", width: 230pt)], name:"fig")
+        content((13, 0), [#image("assets/child_brain_microbiome/khula-eeg-curves.png", width: 450pt)], name:"fig")
         })
     )
 ]
