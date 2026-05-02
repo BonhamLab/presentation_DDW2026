@@ -1,6 +1,7 @@
 #import "@preview/touying:0.7.3": *
 #import themes.metropolis: *
 #import "@preview/cetz:0.4.2"
+#import "@preview/tiaoma:0.3.0"
 #import "assets/general/slides.typ": thank-you-slide, contact_info_slide
 
 #let cetz-canvas = touying-reducer.with(
@@ -15,15 +16,17 @@
   footer: self => self.info.institution,
   config-info(
     title: [
-      The Childhood Microbiome #h(5em)
-      #box(baseline:1em, [
-        #image("assets/general/lab-logo-banner.png", width: 8em)
+      The Early Life Microbiome #h(5em)
+      #box(baseline:0.5em, [
+        #image("assets/general/Tufts_Medical_Center_logo.jpg", width: 8em)
       ])
     ],
-    subtitle: [Brains, immunity, and evoltion],
+    subtitle: [Brains, immunity, and evoltion #h(11em)
+      #box(tiaoma.qrcode("https://github.com/BonhamLab/presentation_DDW2026"), baseline: 0.9em)
+    ],
     author: [Kevin Bonham, PhD],
     date: datetime(year: 2026, month: 5, day: 2),
-    institution: [DDW 2026],
+    institution: [DDW 2026 | bonamlab.bio],
   ),
   config-colors(
     primary: rgb("#3172AE"),
@@ -60,18 +63,32 @@
     }))
 ]
 
+== Outline
+
+- Background - The early life microbiome is a dynamic ecosystem#pause
+- Studying it _as a dynamic system_ is hard#pause
+- Co-development of the gut microbiome and visual neural cirtuitry
+- Future directions
+
 == The gut microbiome has widespread effects on human health
 
-#slide[
-   #figure(
-    cetz-canvas({
+#slide(repeat: 3, self => [
+  #let (uncover, only, alternatives) = utils.methods(self)
+  #cetz.canvas({
     import cetz.draw: *
+    let uncover = uncover.with(cover-fn: hide.with(bounds: true))
+    
     content((0, 0), [#image("assets/child_brain_microbiome/microbiome-effects.jpg", width: 620pt)])
-    content((-9,-7), text(14pt)[@ronanChildhoodDevelopmentMicrobiome2021])
-    // (pause,)
-    // circle((-4.8,4), radius:(80pt,70pt), stroke:3pt + red)
-    }))
-]
+    content((-11,-7), text(14pt)[@ronanChildhoodDevelopmentMicrobiome2021])
+    only(1, rect((-11.3,-1.3), (0,6.4), fill:white, stroke: none))
+    only(1, rect((1.6,-6.3), (12,-1.4), fill:white, stroke: none))
+    only(3, content((0,0),
+      box(stroke:1pt, inset:17pt, fill:white,text(red, 36pt)[
+          #set align(center)
+        All of these systems are shaped#linebreak() in early development
+      ])))
+  })
+])
 
 == The infant microbiome changes rapidly over the first years of life
 
@@ -95,6 +112,7 @@
     import cetz.draw: *
     content((0, 0), [#image("assets/child_brain_microbiome/fahur-fig1a.png", width: 450pt)])
     content((-5,-6), text(14pt)[@fahurbottinoEarlyLifeMicrobial2025])
+    content((12,1), text(14pt)[Guilherme])
     content((12,3), image("assets/general/guilherme_headshot.png", width: 80pt))
     rect((-14,-5.6), (-11,2), fill:white, stroke: none)
 
@@ -111,6 +129,7 @@
     only(1, rect((-0.8,-5.6), (14,5.4), fill:white, stroke:none))
     content((-9,-6), text(14pt)[@fahurbottinoEarlyLifeMicrobial2025])
     content((14,3), image("assets/general/guilherme_headshot.png", width: 80pt))
+    content((14,1), text(14pt)[Guilherme])
   })
 ])
 
@@ -125,6 +144,7 @@
     only("1-2", rect((3.3,-6.6), (7.3,6.4), fill:white, stroke:none))
     content((-9,-6), text(14pt)[@fahurbottinoEarlyLifeMicrobial2025])
     content((14,3), image("assets/general/guilherme_headshot.png", width: 80pt))
+    content((14,1), text(14pt)[Guilherme])
   })
 ])
 
@@ -137,6 +157,7 @@
     content((0, 0), [#image("assets/child_brain_microbiome/fahur-fig2a.png", width: 350pt)])
     content((9,-6), text(14pt)[@fahurbottinoEarlyLifeMicrobial2025])
     content((14,3), image("assets/general/guilherme_headshot.png", width: 80pt))
+    content((14,1), text(14pt)[Guilherme])
     rect((-12,-5.6), (-11,2), fill:white, stroke: none)
     }))
 ]
@@ -147,7 +168,7 @@
    #figure(
     cetz-canvas({
     import cetz.draw: *
-    content((0, 0), [#image("assets/child_brain_microbiome/factors-affecting-microbiome.webp", width: 400pt)
+    content((0, 0), [#image("assets/child_brain_microbiome/factors-affecting-microbiome.png", width: 400pt)
 ])
     content((-5,-6), text(14pt)[@safarchiUnderstandingDysbiosisResilience2025])
     }))][
