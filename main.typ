@@ -21,7 +21,7 @@
         #image("assets/general/Tufts_Medical_Center_logo.jpg", width: 8em)
       ])
     ],
-    subtitle: [Brains, immunity, and evoltion #h(11em)
+    subtitle: [Brains, immunity, and evolution #h(11em)
       #box(tiaoma.qrcode("https://github.com/BonhamLab/presentation_DDW2026"), baseline: 0.9em)
     ],
     author: [Kevin Bonham, PhD],
