@@ -272,12 +272,16 @@
 == Current directions
 
 #slide(composer: (1fr,1fr))[
-- Gaussian Process models for better fit to time-varying data
-   - "Microbiome age Z-score" analagous to growth curves
-- *Mostly unrelated*: stress responses in human milk metabolizing microbe
-  _Bifidobacterium infantis_
- ][
    #image("assets/child_brain_microbiome/who-length-age.png") 
+ ][
+- Gaussian Process models for better fit to time-varying data
+  - "Microbiome age Z-score" analagous to growth curves #pause
+
+*Other projects*
+- stress responses in human milk metabolizing microbe
+  _Bifidobacterium infantis_
+- Software for easier analysis of Spatial 'Omics
+
  ]
 
 
